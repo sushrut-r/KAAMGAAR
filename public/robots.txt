@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zrv4vvg9.insforge.site/sitemap.xml

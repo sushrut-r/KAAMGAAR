@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Network Security Config for कामगार app
+  - InsForge HTTPS backend allowed
+  - Cleartext (HTTP) blocked except localhost for dev
+-->
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="false">
+        <!-- InsForge production backend -->
+        <domain includeSubdomains="true">insforge.app</domain>
+        <domain includeSubdomains="true">insforge.site</domain>
+    </domain-config>
+
+    <!-- Dev only: allow localhost cleartext for live reload -->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">localhost</domain>
+        <domain includeSubdomains="true">10.0.2.2</domain>
+    </domain-config>
+
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>
